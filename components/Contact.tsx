@@ -16,7 +16,7 @@ export default function Contact() {
       : 'नमस्ते, मुझे आपकी सेवाओं में रुचि है।'
 
   return (
-    <section id="contact" className="py-28 bg-[#0F0F0F]">
+    <section id="contact" className="py-28 bg-[var(--bg)]">
       <div className="max-w-3xl mx-auto px-6 text-center">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
@@ -25,8 +25,8 @@ export default function Contact() {
           transition={{ duration: 0.7 }}
         >
           <p className="text-[#C9A84C] text-xs tracking-[0.35em] uppercase mb-5">{t.sectionLabel}</p>
-          <h2 className="font-heading text-4xl md:text-6xl font-bold text-white mb-5">{t.title}</h2>
-          <p className="text-white/50 text-base mb-12 max-w-xl mx-auto leading-relaxed">{t.subtitle}</p>
+          <h2 className="font-heading text-4xl md:text-6xl font-bold text-white light:text-[#1A1A1A] mb-5">{t.title}</h2>
+          <p className="text-white/50 light:text-[#1A1A1A]/55 text-base mb-12 max-w-xl mx-auto leading-relaxed">{t.subtitle}</p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-10">
             <a
@@ -36,19 +36,18 @@ export default function Contact() {
               <PhoneIcon />
               {t.call}
             </a>
-
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(whatsappMessage)}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center justify-center gap-3 px-8 py-4 border border-white/25 text-white font-semibold text-sm tracking-wide rounded hover:border-[#C9A84C] hover:text-[#C9A84C] transition-colors min-w-[180px]"
+              className="flex items-center justify-center gap-3 px-8 py-4 border border-white/25 light:border-[#1A1A1A]/25 text-white light:text-[#1A1A1A] font-semibold text-sm tracking-wide rounded hover:border-[#C9A84C] hover:text-[#C9A84C] transition-colors min-w-[180px]"
             >
               <WhatsAppIcon />
               {t.whatsapp}
             </a>
           </div>
 
-          <p className="text-white/30 text-sm flex items-center justify-center gap-2">
+          <p className="text-white/30 light:text-[#1A1A1A]/35 text-sm flex items-center justify-center gap-2">
             <LocationIcon />
             {t.address}
           </p>

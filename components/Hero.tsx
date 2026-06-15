@@ -22,7 +22,6 @@ export default function Hero() {
 
   return (
     <section ref={ref} className="relative min-h-screen flex items-center justify-center overflow-hidden">
-      {/* Background with parallax */}
       <motion.div style={{ y: bgY }} className="absolute inset-0 scale-110">
         <Image
           src={HERO_IMAGE}
@@ -33,10 +32,9 @@ export default function Hero() {
         />
       </motion.div>
 
-      {/* Gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/45 to-[#0F0F0F]" />
+      {/* Gradient fades into page background at bottom */}
+      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/45 to-[var(--bg)]" />
 
-      {/* Content */}
       <motion.div
         className="relative z-10 text-center px-6 max-w-4xl mx-auto"
         initial={{ opacity: 0, y: 30 }}
@@ -56,7 +54,7 @@ export default function Hero() {
           {t.headline}
         </h1>
 
-        <p className="text-white/60 text-lg md:text-xl mb-12 tracking-wide">
+        <p className="text-white/65 text-lg md:text-xl mb-12 tracking-wide">
           {t.subline}
         </p>
 
@@ -79,7 +77,6 @@ export default function Hero() {
         </div>
       </motion.div>
 
-      {/* Scroll cue */}
       <motion.div
         className="absolute bottom-8 left-1/2 -translate-x-1/2"
         animate={{ y: [0, 8, 0] }}

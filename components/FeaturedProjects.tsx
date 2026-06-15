@@ -22,7 +22,7 @@ export default function FeaturedProjects() {
   const t = translations[lang].featuredProjects
 
   return (
-    <section id="projects" className="py-24 bg-[#0F0F0F]">
+    <section id="projects" className="py-24 bg-[var(--bg)]">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14"
@@ -33,8 +33,8 @@ export default function FeaturedProjects() {
         >
           <div>
             <p className="text-[#C9A84C] text-xs tracking-[0.35em] uppercase mb-3">{t.sectionLabel}</p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-white">{t.title}</h2>
-            <p className="text-white/45 mt-3 text-base">{t.subtitle}</p>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-white light:text-[#1A1A1A]">{t.title}</h2>
+            <p className="text-white/45 light:text-[#1A1A1A]/50 mt-3 text-base">{t.subtitle}</p>
           </div>
           <Link
             href="/projects"
@@ -44,7 +44,6 @@ export default function FeaturedProjects() {
           </Link>
         </motion.div>
 
-        {/* Bento Grid */}
         <div className="grid grid-cols-2 md:grid-cols-3 auto-rows-[220px] gap-3 md:gap-4">
           {featured.map((project, i) => (
             <motion.div
@@ -64,9 +63,7 @@ export default function FeaturedProjects() {
               />
               <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                <span className="text-[#C9A84C] text-xs uppercase tracking-widest">
-                  {project.category}
-                </span>
+                <span className="text-[#C9A84C] text-xs uppercase tracking-widest">{project.category}</span>
                 <p className="text-white text-sm font-medium mt-1">
                   {lang === 'en' ? project.titleEn : project.titleHi}
                 </p>

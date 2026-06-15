@@ -1,5 +1,7 @@
 @import "tailwindcss";
 
+@custom-variant light (&:is(.light, .light *));
+
 @theme inline {
   --color-gold: #C9A84C;
   --color-dark: #0F0F0F;
@@ -10,9 +12,18 @@
   --font-body: var(--font-dm-sans);
 }
 
+/* Dark (default) */
 :root {
-  --background: #0F0F0F;
-  --foreground: #F5F5F5;
+  --bg: #0F0F0F;
+  --bg-surface: #1A1A1A;
+  --bg-deep: #0A0A0A;
+}
+
+/* Light override */
+.light {
+  --bg: #F7F3EE;
+  --bg-surface: #FFFFFF;
+  --bg-deep: #EDE8DF;
 }
 
 html {
@@ -20,9 +31,13 @@ html {
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
+  background: var(--bg);
+  color: #F5F5F5;
   font-family: var(--font-dm-sans), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+.light body {
+  color: #1A1A1A;
 }

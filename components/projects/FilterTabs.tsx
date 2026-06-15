@@ -29,7 +29,7 @@ export default function FilterTabs({ active, onChange }: FilterTabsProps) {
           className={`relative px-5 py-2 text-sm rounded-full transition-colors cursor-pointer ${
             active === tab.key
               ? 'text-[#0F0F0F]'
-              : 'text-white/55 border border-white/15 hover:border-white/35 hover:text-white'
+              : 'text-white/55 light:text-[#1A1A1A]/60 border border-white/15 light:border-[#1A1A1A]/20 hover:border-white/35 light:hover:border-[#1A1A1A]/40 hover:text-white light:hover:text-[#1A1A1A]'
           }`}
         >
           {active === tab.key && (

@@ -16,7 +16,6 @@ function StatCounter({ value, suffix, label }: { value: number; suffix: string; 
     if (!inView) return
     let startTime: number
     const duration = 1800
-
     const step = (timestamp: number) => {
       if (!startTime) startTime = timestamp
       const progress = Math.min((timestamp - startTime) / duration, 1)
@@ -24,7 +23,6 @@ function StatCounter({ value, suffix, label }: { value: number; suffix: string; 
       setCount(Math.floor(eased * value))
       if (progress < 1) requestAnimationFrame(step)
     }
-
     requestAnimationFrame(step)
   }, [inView, value])
 
@@ -33,7 +31,7 @@ function StatCounter({ value, suffix, label }: { value: number; suffix: string; 
       <div className="font-heading text-4xl md:text-5xl font-bold text-[#C9A84C]">
         {count}{suffix}
       </div>
-      <div className="text-white/50 text-sm mt-2 tracking-wide">{label}</div>
+      <div className="text-white/50 light:text-[#1A1A1A]/55 text-sm mt-2 tracking-wide">{label}</div>
     </div>
   )
 }
@@ -44,8 +42,7 @@ export default function About() {
 
   return (
     <section id="about" className="relative py-28 overflow-hidden">
-      {/* Background image */}
-      <div className="absolute inset-0 bg-[#1A1A1A]">
+      <div className="absolute inset-0 bg-[var(--bg-surface)]">
         <Image
           src={ABOUT_IMAGE}
           alt="Navbharat Infra project"
@@ -53,11 +50,11 @@ export default function About() {
           className="object-cover opacity-15"
         />
       </div>
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0F0F0F]/90 to-[#0F0F0F]/70" />
+      {/* Gradient overlay — dark in dark mode, warm in light mode */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#0F0F0F]/90 to-[#0F0F0F]/65 light:from-[#F7F3EE]/92 light:to-[#F7F3EE]/70" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
-          {/* Text side */}
           <motion.div
             initial={{ opacity: 0, x: -30 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -65,12 +62,11 @@ export default function About() {
             transition={{ duration: 0.7 }}
           >
             <p className="text-[#C9A84C] text-xs tracking-[0.35em] uppercase mb-5">{t.sectionLabel}</p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-white mb-6">{t.title}</h2>
-            <p className="text-white/60 text-base leading-relaxed mb-7">{t.desc}</p>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-white light:text-[#1A1A1A] mb-6">{t.title}</h2>
+            <p className="text-white/60 light:text-[#1A1A1A]/65 text-base leading-relaxed mb-7">{t.desc}</p>
             <p className="font-heading text-xl text-[#C9A84C] italic">{t.tagline}</p>
           </motion.div>
 
-          {/* Stats side */}
           <motion.div
             className="grid grid-cols-2 gap-10"
             initial={{ opacity: 0, x: 30 }}
