@@ -4,9 +4,10 @@ import Gallery from '@/components/projects/Gallery'
 import Footer from '@/components/Footer'
 
 export const metadata: Metadata = {
-  title: 'Projects — Navbharat Infra',
+  title: 'Projects',
   description:
-    'Explore our portfolio of engineering design, interior design, and construction projects in Patna, Bihar.',
+    'Browse completed architecture, interior design, and construction projects by Navbharat Infra in Patna, Bihar.',
+  alternates: { canonical: '/projects' },
 }
 
 export default function ProjectsPage() {
