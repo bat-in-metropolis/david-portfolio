@@ -6,7 +6,7 @@ import { useLanguage } from '@/context/LanguageContext'
 import { translations } from '@/lib/translations'
 
 const HERO_IMAGE = '/projects/interior-3.jpg'
-const WHATSAPP_NUMBER = '919000000000'
+const WHATSAPP_NUMBER = '+918709208232' 
 const WHATSAPP_MESSAGE = 'Hi, I am interested in your services.'
 
 export default function Hero() {
@@ -33,7 +33,7 @@ export default function Hero() {
       </motion.div>
 
       {/* Gradient fades into page background at bottom */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/60 via-black/45 to-[var(--bg)]" />
+      <div className="absolute inset-0 bg-linear-to-b from-black/60 via-black/45 to-(--bg)" />
 
       <motion.div
         className="relative z-10 text-center px-6 max-w-4xl mx-auto"
@@ -42,7 +42,7 @@ export default function Hero() {
         transition={{ duration: 0.9, ease: 'easeOut' }}
       >
         <motion.p
-          className="text-[#C9A84C] text-xs tracking-[0.35em] uppercase mb-6"
+          className="text-gold text-xs tracking-[0.35em] uppercase mb-6"
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ delay: 0.3, duration: 0.6 }}
@@ -61,7 +61,7 @@ export default function Hero() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <a
             href="#projects"
-            className="px-8 py-4 bg-[#C9A84C] text-[#0F0F0F] font-semibold text-sm tracking-wide rounded hover:bg-[#b8963e] transition-colors"
+            className="px-8 py-4 bg-gold text-dark font-semibold text-sm tracking-wide rounded hover:bg-[#b8963e] transition-colors"
           >
             {t.ctaProjects}
           </a>
@@ -69,7 +69,7 @@ export default function Hero() {
             href={`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(WHATSAPP_MESSAGE)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="px-8 py-4 border border-white/35 text-white font-semibold text-sm tracking-wide rounded hover:border-[#C9A84C] hover:text-[#C9A84C] transition-colors flex items-center justify-center gap-2"
+            className="px-8 py-4 border border-white/35 text-white font-semibold text-sm tracking-wide rounded hover:border-gold hover:text-gold transition-colors flex items-center justify-center gap-2"
           >
             <WhatsAppIcon />
             {t.ctaWhatsapp}

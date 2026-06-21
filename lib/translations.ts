@@ -7,7 +7,7 @@ export const translations = {
       contact: 'Contact',
     },
     hero: {
-      tagline: 'Navbharat Infra · Mithapur, Patna',
+      tagline: 'Navbharat Infra · Patna',
       headline: 'Build Your Dream Space',
       subline: 'Engineering Design · Interior Design · Construction',
       ctaProjects: 'View Our Work',
@@ -55,6 +55,7 @@ export const translations = {
       subtitle: 'Reach out to us directly — we\'re always happy to discuss your project.',
       call: 'Call Now',
       whatsapp: 'WhatsApp Us',
+      email: 'Email Us',
       address: 'Mithapur, Patna, Bihar',
     },
     footer: {
@@ -131,6 +132,7 @@ export const translations = {
       subtitle: 'हमसे सीधे संपर्क करें — हम आपकी परियोजना के बारे में बात करने के लिए हमेशा तैयार हैं।',
       call: 'अभी कॉल करें',
       whatsapp: 'WhatsApp करें',
+      email: 'ईमेल करें',
       address: 'मिठापुर, पटना, बिहार',
     },
     footer: {

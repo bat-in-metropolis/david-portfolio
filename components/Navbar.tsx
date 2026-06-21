@@ -30,13 +30,13 @@ export default function Navbar() {
     <nav
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
         scrolled || menuOpen
-          ? 'bg-[var(--bg)]/95 backdrop-blur-md shadow-sm border-b border-white/5 light:border-[#1A1A1A]/8'
+          ? 'bg-(--bg)/95 backdrop-blur-md shadow-sm border-b border-white/5 light:border-surface/8'
           : 'bg-transparent'
       }`}
     >
       <div className="max-w-7xl mx-auto px-6 py-5 flex items-center justify-between">
-        <Link href="/" className="font-heading text-xl font-bold text-white light:text-[#1A1A1A]">
-          Navbharat<span className="text-[#C9A84C]">Infra</span>
+        <Link href="/" className="font-heading text-xl font-bold text-white light:text-surface">
+          Navbharat<span className="text-gold">Infra</span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8">
@@ -44,7 +44,7 @@ export default function Navbar() {
             <a
               key={link.href}
               href={link.href}
-              className="text-sm tracking-wide text-white/70 light:text-[#1A1A1A]/70 hover:text-[#C9A84C] transition-colors"
+              className="text-sm tracking-wide text-white/70 light:text-surface/70 hover:text-gold transition-colors"
             >
               {link.label}
             </a>
@@ -55,7 +55,7 @@ export default function Navbar() {
           {/* Language toggle */}
           <button
             onClick={toggleLang}
-            className="text-xs font-medium px-3 py-1.5 rounded-full border border-white/25 light:border-[#1A1A1A]/25 text-white/75 light:text-[#1A1A1A]/75 hover:border-[#C9A84C] hover:text-[#C9A84C] transition-all cursor-pointer"
+            className="text-xs font-medium px-3 py-1.5 rounded-full border border-white/25 light:border-surface/25 text-white/75 light:text-surface/75 hover:border-[#C9A84C] hover:text-[#C9A84C] transition-all cursor-pointer"
           >
             {lang === 'en' ? 'EN | हि' : 'हि | EN'}
           </button>
@@ -64,14 +64,14 @@ export default function Navbar() {
           <button
             onClick={toggleTheme}
             aria-label="Toggle theme"
-            className="p-2 rounded-full border border-white/25 light:border-[#1A1A1A]/25 text-white/75 light:text-[#1A1A1A]/75 hover:border-[#C9A84C] hover:text-[#C9A84C] transition-all cursor-pointer"
+            className="p-2 rounded-full border border-white/25 light:border-surface/25 text-white/75 light:text-surface/75 hover:border-gold hover:text-gold transition-all cursor-pointer"
           >
             {theme === 'dark' ? <SunIcon /> : <MoonIcon />}
           </button>
 
           {/* Mobile hamburger */}
           <button
-            className="md:hidden text-white light:text-[#1A1A1A] p-1 cursor-pointer"
+            className="md:hidden text-white light:text-surface p-1 cursor-pointer"
             onClick={() => setMenuOpen(o => !o)}
             aria-label="Toggle menu"
           >
@@ -96,13 +96,13 @@ export default function Navbar() {
             exit={{ opacity: 0, height: 0 }}
             className="md:hidden overflow-hidden"
           >
-            <div className="px-6 pb-8 flex flex-col gap-6 border-t border-white/5 light:border-[#1A1A1A]/8 pt-4">
+            <div className="px-6 pb-8 flex flex-col gap-6 border-t border-white/5 light:border-surface/8 pt-4">
               {links.map(link => (
                 <a
                   key={link.href}
                   href={link.href}
                   onClick={() => setMenuOpen(false)}
-                  className="text-base text-white/70 light:text-[#1A1A1A]/70 hover:text-[#C9A84C] transition-colors"
+                  className="text-base text-white/70 light:text-surface/70 hover:text-gold transition-colors"
                 >
                   {link.label}
                 </a>

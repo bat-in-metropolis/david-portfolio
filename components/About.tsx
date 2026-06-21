@@ -28,10 +28,10 @@ function StatCounter({ value, suffix, label }: { value: number; suffix: string; 
 
   return (
     <div ref={ref}>
-      <div className="font-heading text-4xl md:text-5xl font-bold text-[#C9A84C]">
+      <div className="font-heading text-4xl md:text-5xl font-bold text-gold">
         {count}{suffix}
       </div>
-      <div className="text-white/50 light:text-[#1A1A1A]/55 text-sm mt-2 tracking-wide">{label}</div>
+      <div className="text-white/50 light:text-surface/55 text-sm mt-2 tracking-wide">{label}</div>
     </div>
   )
 }
@@ -42,7 +42,7 @@ export default function About() {
 
   return (
     <section id="about" className="relative py-28 overflow-hidden">
-      <div className="absolute inset-0 bg-[var(--bg-surface)]">
+      <div className="absolute inset-0 bg-(--bg-surface)">
         <Image
           src={ABOUT_IMAGE}
           alt="Navbharat Infra project"
@@ -51,7 +51,7 @@ export default function About() {
         />
       </div>
       {/* Gradient overlay — dark in dark mode, warm in light mode */}
-      <div className="absolute inset-0 bg-gradient-to-r from-[#0F0F0F]/90 to-[#0F0F0F]/65 light:from-[#F7F3EE]/92 light:to-[#F7F3EE]/70" />
+      <div className="absolute inset-0 bg-linear-to-r from-dark/90 to-dark/65 light:from-[#F7F3EE]/92 light:to-[#F7F3EE]/70" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6">
         <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -61,10 +61,10 @@ export default function About() {
             viewport={{ once: true }}
             transition={{ duration: 0.7 }}
           >
-            <p className="text-[#C9A84C] text-xs tracking-[0.35em] uppercase mb-5">{t.sectionLabel}</p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-white light:text-[#1A1A1A] mb-6">{t.title}</h2>
-            <p className="text-white/60 light:text-[#1A1A1A]/65 text-base leading-relaxed mb-7">{t.desc}</p>
-            <p className="font-heading text-xl text-[#C9A84C] italic">{t.tagline}</p>
+            <p className="text-gold text-xs tracking-[0.35em] uppercase mb-5">{t.sectionLabel}</p>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-white light:text-surface mb-6">{t.title}</h2>
+            <p className="text-white/60 light:text-surface/65 text-base leading-relaxed mb-7">{t.desc}</p>
+            <p className="font-heading text-xl text-gold italic">{t.tagline}</p>
           </motion.div>
 
           <motion.div

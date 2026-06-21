@@ -22,7 +22,7 @@ export default function FeaturedProjects() {
   const t = translations[lang].featuredProjects
 
   return (
-    <section id="projects" className="py-24 bg-[var(--bg)]">
+    <section id="projects" className="py-24 bg-(--bg)">
       <div className="max-w-7xl mx-auto px-6">
         <motion.div
           className="flex flex-col md:flex-row md:items-end md:justify-between gap-6 mb-14"
@@ -32,13 +32,13 @@ export default function FeaturedProjects() {
           transition={{ duration: 0.6 }}
         >
           <div>
-            <p className="text-[#C9A84C] text-xs tracking-[0.35em] uppercase mb-3">{t.sectionLabel}</p>
-            <h2 className="font-heading text-4xl md:text-5xl font-bold text-white light:text-[#1A1A1A]">{t.title}</h2>
-            <p className="text-white/45 light:text-[#1A1A1A]/50 mt-3 text-base">{t.subtitle}</p>
+            <p className="text-gold text-xs tracking-[0.35em] uppercase mb-3">{t.sectionLabel}</p>
+            <h2 className="font-heading text-4xl md:text-5xl font-bold text-white light:text-surface">{t.title}</h2>
+            <p className="text-white/45 light:text-surface/50 mt-3 text-base">{t.subtitle}</p>
           </div>
           <Link
             href="/projects"
-            className="text-sm text-[#C9A84C] border-b border-[#C9A84C]/40 pb-0.5 hover:border-[#C9A84C] transition-colors whitespace-nowrap self-start md:self-auto"
+            className="text-sm text-gold border-b border-gold/40 pb-0.5 hover:border-gold transition-colors whitespace-nowrap self-start md:self-auto"
           >
             {t.viewAll} →
           </Link>
@@ -48,7 +48,7 @@ export default function FeaturedProjects() {
           {featured.map((project, i) => (
             <motion.div
               key={project.id}
-              className={`relative overflow-hidden rounded-sm bg-[#1A1A1A] group cursor-pointer ${bentoConfig[i] ?? ''}`}
+              className={`relative overflow-hidden rounded-sm bg-surface group cursor-pointer ${bentoConfig[i] ?? ''}`}
               initial={{ opacity: 0, y: 20 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-40px' }}
@@ -61,9 +61,9 @@ export default function FeaturedProjects() {
                 className="object-cover transition-transform duration-700 group-hover:scale-105"
                 sizes="(max-width: 640px) 50vw, 33vw"
               />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-0 bg-linear-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <div className="absolute bottom-0 left-0 right-0 p-4 translate-y-2 opacity-0 group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-300">
-                <span className="text-[#C9A84C] text-xs uppercase tracking-widest">{project.category}</span>
+                <span className="text-gold text-xs uppercase tracking-widest">{project.category}</span>
                 <p className="text-white text-sm font-medium mt-1">
                   {lang === 'en' ? project.titleEn : project.titleHi}
                 </p>

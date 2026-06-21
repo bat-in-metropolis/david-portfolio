@@ -28,14 +28,14 @@ export default function FilterTabs({ active, onChange }: FilterTabsProps) {
           onClick={() => onChange(tab.key)}
           className={`relative px-5 py-2 text-sm rounded-full transition-colors cursor-pointer ${
             active === tab.key
-              ? 'text-[#0F0F0F]'
-              : 'text-white/55 light:text-[#1A1A1A]/60 border border-white/15 light:border-[#1A1A1A]/20 hover:border-white/35 light:hover:border-[#1A1A1A]/40 hover:text-white light:hover:text-[#1A1A1A]'
+              ? 'text-dark'
+              : 'text-white/55 light:text-surface/60 border border-white/15 light:border-surface/20 hover:border-white/35 light:hover:border-surface/40 hover:text-white light:hover:text-surface'
           }`}
         >
           {active === tab.key && (
             <motion.div
               layoutId="filter-pill"
-              className="absolute inset-0 bg-[#C9A84C] rounded-full"
+              className="absolute inset-0 bg-gold rounded-full"
               transition={{ type: 'spring', bounce: 0.2, duration: 0.5 }}
             />
           )}
